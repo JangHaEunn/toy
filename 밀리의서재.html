@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <title>밀리의서재</title>
+    <link rel="stylesheet" href="/resources/css/aos.css">
+    <style>
+
+        /* 애니메이션 구현 */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 20%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translateZ(0);
+            }
+      
+        }
+        @keyframes slide{
+            0%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(-30%,0);
+            }
+        }
+        @keyframes backslide{
+            0%{
+                transform: translate(-30%,0);
+            }
+            100%{
+                transform: translate(0,0);
+            }
+        }
+        
+        /* 전체 글씨체 변경 */
+        * { font-family: 'Spoqa Han Sans Neo', sans-serif; }
+
+        /* 전체 틀 */
+        div{
+            box-sizing: border-box;
+            /* border: 1px solid red; */
+        }
+        .wrap{
+            width: 1500px;
+            height: 3500px;
+            margin: auto;
+        }
+        .wrap>div{ width:1500px;}
+
+        /* 헤더(고정바) */
+        #header {
+            height: 7%;
+            position: fixed;
+            background-color:rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+        #header>div{   
+            height: 100%;
+            float: left;
+            text-align: center;   
+        }
+        #header a{
+            text-decoration: none;
+            color: black;
+        }
+        #header p{
+            padding-top: 8px;
+            font-size: 16px;
+        }
+    
+        #h1{ width: 10%; }
+        #h1>img{
+           padding: 20px;
+           width: 30px;
+           border-radius: 100px;   
+        }
+        #h2{ width: 50%;}
+        #h3{ width: 10%;}
+        #h4{ width: 10%;}
+        #h5{ width: 10%;}
+        #h6{ width: 10%;}
+        #h6_1{
+            margin-top: 16%;
+            margin-left: 25%;
+            width: 70px;
+            height: 25px;
+            font-size: smaller;
+            background-color: black;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50px;
+            padding-top: 3px;
+        }
+
+        /* 여백 */
+        .space{height: 2%;}
+
+        .content2{ height: 23% ; overflow: hidden;}
+        #con1{ 
+            height: 30%; 
+            text-align: center;    
+            font-size: 20px;
+            animation: fadeInUp 1.5s;
+        }
+        .con2{ height: 23%;}
+        .con2>img{ 
+            height: 100%;   
+            
+        }
+        .slide{
+            animation: slide 50s linear infinite;
+        }
+        #backslide{
+            animation: backslide 50s linear infinite;
+        }
+
+        /* 화면 틀 */
+        .content{ height: 23% }
+        .content>div, .c2_23>div, .c2_24>div, .c3_22>div, #f_21>div,  .footer>div{
+            height: 100%;
+            float: left;
+        }
+
+        /* 화면1 */
+        .c_space{width: 15% }
+        .c_1 { width: 20%;}
+        .c_2 { width: 53%;}
+        .c_1>div{height: 50%;}
+        #c_11{
+            padding-top: 15%;
+            padding-left: 16%;
+            position: relative;
+            animation: fadeInUp 1.5s;
+            font-size: 20px;
+        }
+        #c_11>h2{
+            font-weight: 20;
+            font-size: 23px;
+        }
+        .c_22>img{
+            width: 150px;
+            margin-top: 150px;
+            margin-left: 60px;
+            position: static;
+            animation: fadeInUp 1.5s;
+        }
+        .c_2>img{
+            width: 100%;
+            height: 80%;
+            padding-top: 60px;
+        }
+    
+        /* 하단의 네비게이터 */
+        #navi{
+            width: 300px;
+            height: 60px;
+            padding: 0;
+            margin-left: 600px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: small;
+            border-radius: 50px;
+            box-shadow: 2px 1px 7px 1px gray;
+            position: fixed;
+            z-index: 2;
+        }
+        #navi p{
+            margin: 0;
+            padding-top: 20px;
+       }
+    
+       /* 화면2 */
+       .c1_1, .c1_2, .c1_3{
+            background-color: rgb(242, 242, 242);
+        }
+        .c1_1, .c1_3{ width: 15%;}
+        .c1_2{ width: 70%; }
+        #c1_21{
+            height: 25%;
+            text-align: center;
+            font-size: 20px;
+        }
+        #c1_22{ height: 70%;}
+        #c1_22>video{ 
+            width: 80%; 
+            margin-top: 30px;
+            padding-left: 10%;}
+
+        /* 화면3 */
+        .c2_1{ width: 15%;}
+        .c2_2{ width: 75%;}
+        #c2_21{
+            height: 25%;
+            text-align: center;
+            padding-right: 10%;
+            font-size: 20px;
+        }
+        .c2_22{ height: 4%; }
+        .c2_23{ height: 25%;}
+
+        .c2_24{ height: 9%; }
+        .con1{
+            width: 20%;
+            padding-right: 10px;
+            font-size: px;
+        }
+        .con1>img{ width: 63%; }
+        .con1>p{
+            margin: 0;
+            font-size: smaller;
+        }
+    
+        /* 화면4 */
+        .c3{ width: 30%;}
+        .c3>div{
+            height: 50%;
+           
+        }
+        #c3_1>img{ border-radius: 100px; }
+        #c3_1{
+            font-size: 20px;
+        }
+        .c3_21{ height: 70%; }
+        .c3_22{ height: 10%; position: relative;}
+        .c33{ width: 40%; }
+    
+        
+        /* 호버 효과 구현 */
+        .a{
+            width: 20%;
+            text-align: center;
+            padding-top: 7px;
+            margin: 5px;
+            border-radius: 50px;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+        }
+        .c:hover{ background-color:rgba(0, 0, 0, 0.3);}
+        .e>img{
+            opacity:0;
+            position:absolute;
+            transition: all 1s;
+            bottom: 150%;
+            left: 170%;
+            width: 270px;
+            height: 550px;
+            border-radius: 30px;
+            box-shadow: 2px 1px 7px 1px gray;
+        }
+        .g>img{
+            position:absolute;
+            transition: all 1s;
+            bottom: 150%;
+            left: 170%;
+            width: 270px;
+            height: 550px;
+            border-radius: 30px;
+            box-shadow: 2px 1px 7px 1px gray;
+        }
+        .f{
+            opacity: 0;
+            position:absolute;
+            transition: all 1s;
+            bottom: 330%;
+            width: 300px;
+            height: 10%;
+            left: 0%;
+            text-align: justify;
+        }
+        #c3_201:hover .d{opacity:1;}
+        #c3_202:hover .d{opacity:1;}
+        #c3_203:hover .d{opacity:1;}
+        #c3_204:hover .d{opacity:1;}
+    
+        h2{ margin-top: 30px;}
+
+        /* footer */
+        .footer{ height: 6%; }
+        .f_1, .f_3{ width: 15%; }
+        .f_2{ width: 70%;}
+        #f_21{ height: 20%;}
+
+        #f_22{ height: 80%;}
+        #f_22>p{
+            font-size: 10px;
+            color: gray;
+        }
+        #f_22 a{
+            text-decoration: none;
+            color: black;
+        }
+        #i{ width: 78%; }
+        #i>p{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #h{ width: 22%; text-align: end;}
+        #h>img{
+            cursor: pointer;
+            border-radius: 100px;
+        }
+        #imgfixed{
+            position: relative;
+        }
+
+
+    </style>
+   
+</head>
+<body>
+    <div class="wrap">
+       
+        <div id="header">
+            <div id="h1"><img src="resources/image/로고로고.PNG" alt="로고"></div>
+            <div id="h2"></div>
+            <div id="h3"><a href="https://www.millie.co.kr/h4/b2b/"><p>기업문의</p></a></div>
+            <div id="h4"><a href="https://www.millie.town/"><p>회사소개</p></a></div>
+            <div id="h5"><a href="https://www.millie.co.kr/v3/login"><p>계정관리</p></a></div>
+            <div id="h6">
+                <a href="https://www.millie.co.kr/v3/login"><div id="h6_1">로그인</div></a>
+            </div>
+        </div>
+        
+    
+        
+        <div class="space"></div>
+        <div class="content">
+            <div class="c_space"></div>
+            <div class="c_1">
+                <div class="ani" id="c_11" ><h1>당신의 일상을<br>1밀리+</h1><h2>독서와 무제한 친해지리</h2></div>
+                <div class="c_22" ><img src="resources/image/밀리의서재로고.jpg"></div>
+            </div>
+            <div class="c_2"><img src="resources/image/밀리메인.png"></div>
+        </div>
+        
+        <div class="space">
+            <a href="https://www.millie.co.kr/v3/intro"><div id="navi"><p><b>첫달 무료</b>로 독서 시작하기</p></div></a>
+        </div>
+       
+        <div class="content2">
+            <div id="con1" class="ani"><h2>당신을 기다리는<br>12만권의 도서</h2>첫 달 무료 구독을 통해<br>
+                어떤 도서가 있는지 확인해보세요</div>
+            <div class="con2"><img src="resources/image/슬라이드1.png" class="slide"></div>
+            <div class="con2"><img src="resources/image/슬라이드2.png" id="backslide"></div>
+            <div class="con2"><img src="resources/image/슬라이드3.png" class="slide" ></div>
+        </div>
+        <div class="space"></div>
+        <div class="content" >
+            <div class="c1_1"></div>
+            <div class="c1_2">
+                <div id="c1_21" class="ani"><h2>오디오 드라마로 만나는<br>베스트셀러</h2>휴남동 서점의 따듯한 이야기를<br>일상에서 더 가깝게</div>
+                <div id="c1_22"><video src="resources/video/y2mate.com - 오디오 드라마 왠지 신경 쓰이는 손님이 있다 어서오세요 휴남동 서점입니다 Teaser_480p.mp4" poster="resources/image/밀리영상.png" 
+                    width="100%" height="90%" controls loop></video></div>
+            </div>
+            <div class="c1_3"></div>
+        </div>
+        <div class="space"></div>
+
+        <div class="content">
+            <div class="c2_1"></div>
+            <div class="c2_2" >
+                <div id="c2_21" class="ani" ><h2>싹 다 무제한<br>9,900원</h2>10년치 베스트셀러<br>신간 오디오북 장르 소설까지</div>
+                <div class="c2_22"><b>지금 서점 베스트셀러</b></div>
+                <div class="c2_23" >
+                    <div class="con1" data-aos="fade-up" data-aos-duration="500"><img src="resources/image/트렌트코리아.PNG"></div>
+                    <div class="con1" data-aos="fade-up" data-aos-duration="1000"><img src="resources/image/만일 내가.PNG"></div>
+                    <div class="con1" data-aos="fade-up" data-aos-duration="1500"><img src="resources/image/내가 틀릴수도.PNG"></div>
+                    <div class="con1" data-aos="fade-up" data-aos-duration="2000"><img src="resources/image/불편한.PNG"></div>
+                    <div class="con1" data-aos="fade-up" data-aos-duration="2500"><img src="resources/image/하얼빈.PNG"></div>
+                </div>
+                <div class="c2_24" >
+                    <div class="con1"><p><b>트렌드코리아 2023</b><br>김난도,전미영,최지혜 ...</p></div>
+                    <div class="con1"><p><b>만일 내가 인생을 다시 산다면</b><br>김혜남</p></div>
+                    <div class="con1"><p><b>내가 틀릴수도 있습니다</b><br>비욘 나티코 린데블라드 ..</p></div>
+                    <div class="con1"><p><b>불편한 편의점</b><br>김호연 지음</p></div>
+                    <div class="con1"><p><b>하얼빈</b><br>김훈</p></div>
+                </div>
+                <div class="c2_22"><b>한 달 이내 출간된 책</b></div> 
+                <div class="c2_23" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="con1"><img src="resources/image/외사랑.PNG"></div>
+                    <div class="con1"><img src="resources/image/나는 논어.PNG"></div>
+                    <div class="con1"><img src="resources/image/아주작2.PNG"></div>
+                    <div class="con1"><img src="resources/image/복잡.PNG"></div>
+                    <div class="con1"><img src="resources/image/미래.PNG"></div>
+                </div>
+                <div class="c2_24">
+                    <div class="con1"><p><b>외사랑</b><br>히가시노 게이고 지음</p></div>
+                    <div class="con1"><p><b>나는 논어를 만나 행복해졌다</b><br>판덩 지음 / 이서연 옮김</p></div>
+                    <div class="con1"><p><b>아주 작은 반복의 힘</b><br>로버트 마우어</p></div>
+                    <div class="con1"><p><b>복잡한 세상을 이기는 수학의 힘</b><br>류쉐펑 지음 / 이서연 옮김</p></div>
+                    <div class="con1"><p><b>미래 사회 보고서</b><br>유기윤,김정옥,김지영 지음</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+
+        <div class="content" id="imgfixed">
+            <div class="c_space"></div>
+            <div class="c3"> 
+                <div class="ani" id="c3_1"><br><br><img src="resources/image/오디오.png" width="50px" ><br>
+                <h1>오디오북</h1><p>세상에서 가장<br>교양있는 수면제</p></div>
+                <div class="c3_2">
+                    <div class="c3_21"></div>
+                    <div class="c3_22">
+                        <div class="a c" id="c3_201">1
+                            <div class="g"><img src="resources/image/사진 11_1.png" id="nn"  class="d"></div>
+                            <div class="f d"><p><b>하루의 시작과 마무리를 오디오북과 함께</b><br>
+                                지하철에서도, 잠들기 전에도 독서하세요</p></div>
+                        </div>
+                        <div class="a c " id="c3_202">2
+                            <div class="e"><img src="resources/image/사진 22_2.png" class="d"></div>
+                            <div class="f d"><p><b>귀로 듣다가 눈으로도 같이 보면</b><br>
+                                더 내용이 잘 이해돼요</p></div>
+                        </div>
+                        <div class="a c" id="c3_203">3
+                            <div class="e"><img src="resources/image/사진 33-3.png" class="d"></div>
+                            <div class="f d"><p><b>30분만에 책 요약</b><br>
+                                핵심만 쏙 골라 읽어주는 오디오북</p></div>
+                        </div>
+                        <div class="a c" id="c3_204">4
+                            <div class="e"><img src="resources/image/사진 44-4.png" id="nm" class="d"></div>
+                            <div class="f d"><p><b>이제훈부터 옥주현까지</b><br>
+                                셀럽이 읽어주는 오디오북</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c33"></div>
+        </div>
+        <div class="footer">
+            <div class="f_1"></div>
+            <div class="f_2">
+                <div id="f_21">
+                    <div id="i"><p><b>(주) 밀리의 서재</b></p></div>
+                    <div id="h">
+                        <a href="https://www.youtube.com/channel/UC6bk8AaEXA1hBnGXcLyj1QQ" target="_blank"><img src="resources/image/유튜브1.png"></a>
+                        <a href="https://www.instagram.com/millie_bookclub/" target="_blank"><img src="resources/image/카메라1.PNG"></a>
+                        <a href="https://www.facebook.com/millie.co.kr/" target="_blank"><img src="resources/image/페이스북1.PNG"></a>
+                        <a href="https://pf.kakao.com/_MhGhC" target="_blank"><img src="resources/image/카카오톡1.PNG"></a>
+                        <a href="https://post.naver.com/millietown" target="_blank"><img src="resources/image/네이버1.PNG"></a>
+                    </div>
+                </div>
+                <div id="f_22"><p>대표이사 : 서영택&nbsp;&nbsp;&nbsp;
+                    사업자등록번호 : 423-88-00370&nbsp;&nbsp;&nbsp;
+                    호스팅 제공자 : (주)밀리의 서재<br>
+                    통신판매업 신고번호 : 2016-서울마포-2012호&nbsp;&nbsp;&nbsp;
+                    주소 : 서울특별시 마포구 양화로 45, 16층 (메세나폴리스 세아타워)<br><br>
+                    고객정보보호 책임자 : 김태형(beiron@millie.town)&nbsp;&nbsp;&nbsp;
+                    마케팅 제휴 문의 : business@millie.town<br><br>
+                <a href="https://corp.millie.co.kr/policy/terms/?nav_hidden=y">이용약관 ></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://corp.millie.co.kr/policy/privacy/?nav_hidden=y"><b>개인정보 처리방침 ></b></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.millie.co.kr/v3/customer?nav_hidden=y">고객센터 ></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.millie.town/">회사 소개 ></a><br><br>
+                Copyright © 2023 밀리의 서재 All Rights Reserved.
+                </p></div>
+            </div>
+            <div class="f_3"></div>
+        </div>
+        <div class="space"></div>
+    </div>
+
+    <script>
+        let c_11 = document.getElementById("c_11");
+        let con1 = document.getElementById("con1");
+        let c1_21 = document.getElementById("c1_21");
+        let c2_21 = document.getElementById("c2_21");
+        let c3_1 = document.getElementById("c3_1");
+        let ani = document.getElementsByClassName("ani");
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            console.log("scrollY",value);
+            
+            if(value>100){
+         
+                c_11.style.animation = 'fadeInUp 1.5s';
+                con1.style.animation = 'none';
+                c1_21.style.animation = 'none';
+                c2_21.style.animation = 'none';
+                c3_1.style.animation = 'none';
+             }
+            
+            if(value>160){
+                c_11.style.animation = 'none';
+                con1.style.animation = 'fadeInUp 1.5s';
+                c1_21.style.animation = 'none';
+                c2_21.style.animation = 'none';
+                c3_1.style.animation = 'none';
+            }
+            if(value>1000){
+                c_11.style.animation = 'none';
+                con1.style.animation = 'none';
+                c1_21.style.animation = 'fadeInUp 1.5s';
+                c2_21.style.animation = 'none';
+                c3_1.style.animation = 'none';
+            }
+            if(value>1900 ){
+                c_11.style.animation = 'none';
+                con1.style.animation = 'none';
+                c1_21.style.animation = 'none';
+                c2_21.style.animation = 'fadeInUp 1.5s';
+                c3_1.style.animation = 'none';
+            }
+            if(value>2950){
+                c_11.style.animation = 'none';
+                con1.style.animation = 'none';
+                c1_21.style.animation = 'none';
+                c2_21.style.animation = 'none';
+                c3_1.style.animation = 'fadeInUp 1.5s';
+            }
+        });
+
+        
+    </script>
+
+    <script src="/resources/js/aos.js"></script>
+    <script src="/resources/js/main.js"></script>
+</body>
+</html>
